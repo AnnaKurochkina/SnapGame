@@ -41,3 +41,27 @@ Create a Player class and enable the snap game to be two player, with the users 
 turn, they win.<br />
 Add a timer so that when there is a snap opportunity, the player has 2 seconds to submit the word “snap” in order to win. If they don’t
 type it in time, they lose.
+
+# Playing Snap game
+## Snap game has 2 players
+
+ 1. At the start of the game players enter their names.
+ 2. After that the first card is drawn from the deck.
+ 3. The first player draw the second card.
+ 4. If 2 cards have the same value, the first player has 2 seconds to type "snap" to win the game, otherwise the second player wins the game.
+ 5. If it's not a match - the second card becoms the first card, the second player draws a card from the deck to compare.
+ 6. The game keeps looping, until 2 cards match or there are no cards in the deck.
+ 7. At the end the game pops up a question "Do you want to play again? (y/n)".
+ 
+## Classes
+
+* Enum `Symbol` - stores int value for each symbol.
+* Enum `Suit` - stores suits.
+* Class `SuitUnicode` maps card suits to unicode values.
+* Class `SymbolValue` maps card int values to string card symbols.
+* Class `CardGame` - parent class for Snap game, contains methods for initialising, sorting, shuffling the deck, and dealing a card.
+* Class `Snap` - child class for CardGame, contains logic for enabling the game, delayExecutor method.
+* Class `Player` store players' names and toggle turns.
+* Class `UserInput` for restarting the game.
+* Class `Utils` has try catch block for delaying execution while the user types "snap".
+* Casses `CardSuitComparer` and `CardValueComparer` for sorting a deck of cards, not used int the game, added to the project as a compulsory requirement.
